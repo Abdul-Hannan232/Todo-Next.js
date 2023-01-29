@@ -1,0 +1,23 @@
+@media (min-width: 760px) {
+  .box {
+    margin-top: auto;
+    position: absolute;
+    top: 5rem;
+    width: fit-content;
+  }
+}
+
+.data-div {
+  margin: 20px;
+}
+.data {
+  margin: 5px;
+}
+.data span {
+  margin-left: 5px;
+}
+.data:hover {
+  color: teal;
+  background-color: rgb(255, 255, 172);
+  border-radius: 5px;
+}
