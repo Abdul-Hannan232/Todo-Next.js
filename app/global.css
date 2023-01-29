@@ -7,6 +7,15 @@
   }
 }
 
+@media (max-width: 759px) {
+  .box {
+    margin-top: auto;
+    position: absolute;
+    top: 10rem;
+    width: fit-content;
+  }
+}
+
 .data-div {
   margin: 20px;
 }
