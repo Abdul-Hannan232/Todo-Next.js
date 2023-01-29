@@ -15,11 +15,14 @@ import { Center } from "@chakra-ui/react";
 import { useState } from "react";
 
 export default function Home() {
-  const [todos, setTodos] = useState<object[]>([]);
-  const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState<{ todoText: string }[]>([
+    { todoText: "Dummy Todo" },
+  ]);
+
+  const [todo, setTodo] = useState<string>("");
 
   const addValueHandler = () => {
-    const newTodo = { todoText: todo, completed: false };
+    const newTodo = { todoText: todo };
     const newTodos = [...todos, newTodo];
     setTodos(newTodos);
     setTodo("");
@@ -27,7 +30,7 @@ export default function Home() {
 
   const delValueHandler = (meraTodo: { todoText: String }) => {
     const newTodos = todos.filter((el) => {
-      if (el.todoText == meraTodo.todoText) {
+      if (el?.todoText == meraTodo.todoText) {
         return false;
       }
       return true;
@@ -57,7 +60,7 @@ export default function Home() {
         </InputGroup>
 
         <div className="data-div">
-          {todos.map((el) => {
+          {todos?.map((el) => {
             return (
               <Flex justifyContent={"space-between"} className={"data"}>
                 <span key={el.todoText}>{el.todoText}</span>
